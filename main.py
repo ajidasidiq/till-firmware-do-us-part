@@ -26,6 +26,7 @@ def main() -> None:
     assert 1 <= len(VOW) <= 200, f"vow must be 1-200 chars, got {len(VOW)}"
     assert VOW.strip() == VOW and "\n" not in VOW, "vow must be one line"
     assert VOW.count(".") == 1, "vow must be a single sentence"
+    assert VOW.endswith("."), "vow must end with its single full stop"
     out_dir = "/output"
     os.makedirs(out_dir, exist_ok=True)
     with open(os.path.join(out_dir, "entry.txt"), "w", encoding="utf-8") as f:
